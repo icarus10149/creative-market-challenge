@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'RemarksController@index');
+Route::post('/remarks', 'RemarksController@store');
 
-    $remarks = DB::table('remarks')->get();
-    // return $remarks;
-    return view('remarks', compact('remarks'));
-});
+// Route::get('/', function () {
+//     $remarks = App\Remark::all();
+    
+//     return view('remarks', compact('remarks'));
+// });

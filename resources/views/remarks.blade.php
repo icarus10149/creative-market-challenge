@@ -14,6 +14,19 @@
     <body>
         <div class="container">
             <h1>Hello World</h1>
+            <form method="POST" action="/remarks">
+                {{ csrf_field() }}
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" name="username">
+                </div>
+                <div class="field">
+                    <label>Remark</label>
+                    <textarea name="remark"></textarea>
+                </div>
+                <button>Submit</button>
+            </form>            
+            
             @foreach($remarks as $remark)
                 <i>{{$remark->id}}</i>
                 <p>{{$remark->username}}</p>

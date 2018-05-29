@@ -16,7 +16,7 @@ class CreateRemarksTable extends Migration
         Schema::create('remarks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username');
-            $table->integer('parent_remark_id');
+            $table->integer('parent_remark_id')->nullable();
             $table->text('remark');
             $table->timestamps();
         });
