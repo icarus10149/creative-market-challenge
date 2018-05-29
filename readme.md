@@ -16,7 +16,7 @@
 | updated_at       | timestamp        | YES  |     | NULL    |                |                                                                                                                        
 +------------------+------------------+------+-----+---------+----------------+ 
 
-### remark_counts Table Field
+### remark_counts Table Fields
 
 +------------+--------------+------+-----+---------+-------+                                                                                                                                           
 | Field      | Type         | Null | Key | Default | Extra |                                                                                                                                           

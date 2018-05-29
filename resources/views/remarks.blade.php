@@ -18,8 +18,8 @@
                     <div class="columns">
                         <div class="column">
                             <div class="remarks-wrapper box">
-                                @if(empty($remarks))
-                                    <h2>No Remakrs Have Been Posted Yet - Be the First to Post!</h2>
+                                @if(!count($remarks))
+                                    <h2 class="title is-5">No Remakrs Have Been Posted Yet - Be the First to Post!</h2>
                                 @endif
                                 @foreach($remarks as $remark)
                                     <div class="box">
@@ -57,50 +57,6 @@
                 </div>
             </section>
         </div>
-        
-        <!--<div class="container">-->
-        <!--    <h1>Shop Message Board</h1>-->
-            <!--<form method="POST" action="/remarks">-->
-            <!--    {{ csrf_field() }}-->
-            <!--    <div class="field">-->
-            <!--        <label>Username</label>-->
-            <!--        <input required type="text" name="username">-->
-            <!--    </div>-->
-            <!--    <div class="field">-->
-            <!--        <label>Remark</label>-->
-            <!--        <textarea required name="remark"></textarea>-->
-            <!--    </div>-->
-                <!--<input type="number" name="parent_remark_id">-->
-            <!--    <button>Submit</button>-->
-            <!--</form>-->
-        <!--    <div class="columns">-->
-        <!--        <div class="column is-three-quarters">-->
-        <!--            <h2>Remarks</h2>-->
-        <!--            @foreach($remarks as $remark)-->
-        <!--                <hr>-->
-        <!--                <p><strong>Username:</strong> {{$remark->username}}</p>-->
-        <!--                <p><strong>Remark:</strong> {{$remark->remark}}</p>-->
-        <!--                @if($loop->last)-->
-        <!--                    <hr>-->
-        <!--                @endif-->
-        <!--            @endforeach-->
-        <!--        </div>-->
-        <!--        <div class="column is-one-quarter">-->
-        <!--            <h2>Remark Counts</h2>-->
-        <!--            <ul>-->
-        <!--                @foreach($remarkCount as $rc)-->
-        <!--                    <li>-->
-        <!--                        <strong>{{$rc->username}}: </strong> {{$rc->count}}-->
-        <!--                    </li>-->
-        <!--                @endforeach-->
-        <!--            </ul>-->
-        <!--        </div>-->
-        <!--    </div>-->
-        <!--</div>-->
-        <script>
-            // let csrfToken = {{ csrf_token() }};
-            // window.Larvel.csrfToken =  csrfToken;
-        </script>
         <script src="{{asset('/js/manifest.js')}}"></script>
         <script src="{{asset('/js/vendor.js')}}"></script>
         <script src="{{asset('/js/app.js')}}"></script>        
