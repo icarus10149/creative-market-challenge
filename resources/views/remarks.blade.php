@@ -19,7 +19,7 @@
                         <div class="column">
                             <div class="remarks-wrapper box">
                                 @if(!count($remarks))
-                                    <h2 class="title is-5">No Remakrs Have Been Posted Yet - Be the First to Post!</h2>
+                                    <h2 class="title is-5">No Remarks Have Been Posted Yet - Be the First to Post!</h2>
                                 @endif
                                 @foreach($remarks as $remark)
                                     <div class="box">
