@@ -22,6 +22,7 @@
                     <label>Remark</label>
                     <textarea required name="remark"></textarea>
                 </div>
+                <!--<input type="number" name="parent_remark_id">-->
                 <button>Submit</button>
             </form>
             <div class="columns">
@@ -37,10 +38,12 @@
                     @endforeach
                 </div>
                 <div class="column is-one-quarter">
-                    <h2>Comment Counts</h2>
+                    <h2>Remark Counts</h2>
                     <ul>
                         @foreach($remarkCount as $rc)
-                            <li>{{$rc->username}}: {{$rc->count}}</li>
+                            <li>
+                                <strong>{{$rc->username}}: </strong> {{$rc->count}}
+                            </li>
                         @endforeach
                     </ul>
                 </div>

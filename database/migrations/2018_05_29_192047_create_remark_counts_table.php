@@ -14,8 +14,7 @@ class CreateRemarkCountsTable extends Migration
     public function up()
     {
         Schema::create('remark_counts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('username');
+            $table->string('username')->primary();
             $table->integer('count')->default(0);
             $table->timestamps();
         });

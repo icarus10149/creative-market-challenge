@@ -57,6 +57,9 @@ class RemarksController extends Controller
         $remark = new Remark;        
         $remark->username = $username;
         $remark->remark = $request['remark'];
+        if($request['parent_remark_id']){
+            $remark->parent_remark_id = $request['parent_remark_id'];
+        }
         
         // Save the Remark and RemarkCount
         $remark->save();
