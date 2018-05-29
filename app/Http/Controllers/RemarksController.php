@@ -15,7 +15,7 @@ class RemarksController extends Controller
      */
     public function index()
     {
-        $remarks = Remark::all();
+        $remarks = Remark::orderBy('created_at','desc')->get();
         $remarkCount = RemarkCount::all();
         return view('remarks', compact('remarks','remarkCount'));
     }
