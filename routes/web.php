@@ -13,9 +13,3 @@
 
 Route::get('/', 'RemarksController@index');
 Route::post('/remarks', 'RemarksController@store');
-
-// Route::get('/', function () {
-//     $remarks = App\Remark::all();
-    
-//     return view('remarks', compact('remarks'));
-// });

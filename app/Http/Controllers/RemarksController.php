@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Remark;
+use App\RemarkCount;
 
 class RemarksController extends Controller
 {
@@ -15,7 +16,8 @@ class RemarksController extends Controller
     public function index()
     {
         $remarks = Remark::all();
-        return view('remarks', compact('remarks'));        
+        $remarkCount = RemarkCount::all();
+        return view('remarks', compact('remarks','remarkCount'));
     }
 
     /**
@@ -36,13 +38,30 @@ class RemarksController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        // dd($request->all());
-        $remark = new Remark;
-        $remark->username = $request['username'];
+        // make it easier to re-use the username value
+        $username = $request['username'];
+        
+        // $username is the RemarkCount PrimaryKey
+        $remarkCount = RemarkCount::find($username);
+        
+        // if we didn't find a matching RemarkCount, create a new one, and assign the Primary Key to the username passed in the request
+        if(!$remarkCount){
+            $remarkCount = new RemarkCount;
+            $remarkCount->username = $username;
+        }
+        
+        // $remarkCount->count default is 0 -- so whether a new record, or an existing one, this will properly increment the count.
+        $remarkCount->count++;
+        
+        // Create the Remark record
+        $remark = new Remark;        
+        $remark->username = $username;
         $remark->remark = $request['remark'];
-        // $remark->created_at = time();
+        
+        // Save the Remark and RemarkCount
         $remark->save();
+        $remarkCount->save();
+        
         return redirect('/');
     }
 
