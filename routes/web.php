@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('commentsView');
+
+    $remarks = DB::table('remarks')->get();
+    // return $remarks;
+    return view('remarks', compact('remarks'));
 });
