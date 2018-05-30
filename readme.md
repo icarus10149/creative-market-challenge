@@ -30,12 +30,19 @@ Clone the repo
 git clone https://github.com/icarus10149/creative-market-challenge.git
 ```
 Run: composer install
+
 Copy .env.example -> .env in the project root
+
 Configure DB settings for your environment
+
 Run: php artisan key:generate
+
 Run: php artisan migrate:install
+
 Followed by: php artisan migrate
+
 Then to build the project assets run: npm install
+
 Followed by: npm run dev
 
 ## DB Tables
@@ -55,8 +62,8 @@ Followed by: npm run dev
 | updated_at       | timestamp        | YES  |     | NULL    |                |                                                                                                                        
 +------------------+------------------+------+-----+---------+----------------+ 
 ```
-```bash
 ### remark_counts Table Fields
+```bash
 
 +------------+--------------+------+-----+---------+-------+                                                                                                                                           
 | Field      | Type         | Null | Key | Default | Extra |                                                                                                                                           
