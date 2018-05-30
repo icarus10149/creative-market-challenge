@@ -19,12 +19,31 @@ Nice to Haves:
 * Enhancing the UI beyond plain markup and basic styles
 * Use of Laravel/Vue
 
+## Installation
+Requires: 
+* Node/NPM
+* MySql
+* PHP >= 5.6.4
+
+Clone the repo
+```bash
+git clone https://github.com/icarus10149/creative-market-challenge.git
+```
+Run: composer install
+Copy .env.example -> .env in the project root
+Configure DB settings for your environment
+Run: php artisan key:generate
+Run: php artisan migrate:install
+Followed by: php artisan migrate
+Then to build the project assets run: npm install
+Followed by: npm run dev
 
 ## DB Tables
 * remarks
 * remark_counts
 
 ### remarks Table Fields
+```bash
 +------------------+------------------+------+-----+---------+----------------+                                                                                                                        
 | Field            | Type             | Null | Key | Default | Extra          |                                                                                                                        
 +------------------+------------------+------+-----+---------+----------------+                                                                                                                        
@@ -35,7 +54,8 @@ Nice to Haves:
 | created_at       | timestamp        | YES  |     | NULL    |                |                                                                                                                        
 | updated_at       | timestamp        | YES  |     | NULL    |                |                                                                                                                        
 +------------------+------------------+------+-----+---------+----------------+ 
-
+```
+```bash
 ### remark_counts Table Fields
 
 +------------+--------------+------+-----+---------+-------+                                                                                                                                           
@@ -46,3 +66,4 @@ Nice to Haves:
 | created_at | timestamp    | YES  |     | NULL    |       |                                                                                                                                           
 | updated_at | timestamp    | YES  |     | NULL    |       |                                                                                                                                           
 +------------+--------------+------+-----+---------+-------+
+```
